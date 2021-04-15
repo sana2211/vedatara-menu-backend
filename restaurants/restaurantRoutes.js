@@ -5,36 +5,20 @@ const restaurantRouter = express.Router()
 
 restaurantRouter
     .route(`/:user_id`)
-    .all((req, res, next)=>{
-      restaurantService.getrestaurants(
-          req.app.get('db'),
-          req.params.user_id
-        )
-        .then(user=>{
-          if(!user){
-             return res.status(404).json({
-             error: {message: `No restaurants` }
-              })
-            }
-            res.user = user
-            next()
-        })
-        .catch(next)       
-    })
     .get((req, res, next)=>{
         res.json(res.user)
     })
     .post((req, res, next)=>{
         console.log(req.body)
-         const { title, artist, url, user_id } = req.body
+         const { title, description, calories, user_id } = req.body
               const newrestaurant ={
                   title,
-                  artist,
-                  url,
+                  description,
+                  calories,
                   user_id
               };
               console.log(newrestaurant)
-              restaurantService.insertNewrestaurant(
+              restaurantService.insertNewmenu(
                 req.app.get('db'),
                 newrestaurant
                )

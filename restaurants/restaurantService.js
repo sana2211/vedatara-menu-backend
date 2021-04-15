@@ -1,6 +1,6 @@
   const restaurantService = {
    
-    insertNewrestaurant(knex, newUser){
+    insertNewmenu(knex, newUser){
         return knex
             .insert(newUser)
             .into('restaurants')
