@@ -59,7 +59,7 @@ restaurantRouter
       })
   
     .delete((req, res, next)=>{
-      BookmarkService.deleteBookmark(
+      RestaurantService.deleterestaurant(
             req.app.get('db'),
             req.params.user_id
         )
