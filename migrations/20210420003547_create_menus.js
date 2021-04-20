@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-    return knex.schema.createTable('restaurants', (table)=>
+    return knex.schema.createTable('menus', (table)=>
     {
     table.increments();
     table.integer("user_id").notNullable();
@@ -14,5 +14,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropTable('restaurants')
+    return knex.schema.dropTable('menus')
 };

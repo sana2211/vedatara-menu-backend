@@ -9,7 +9,7 @@ const cors = require('cors')
 const knex = require('knex')
 const db =knex({
     client: 'pg',
-    connection:'postgres://mlyuurfwtyedfh:92ff09043eabd0824d9d8bb99946669f1cc83ad094704972dc51765c2700a9a3@ec2-52-44-139-108.compute-1.amazonaws.com:5432/de8fhncugherm3?ssl=true',
+    connection:'postgres://fzyvkhbcrlpogt:35538c1afc8d98af92ebeb643fff4d7ba1c872b97ba6116f8adc375dc439eeb8@ec2-54-167-168-52.compute-1.amazonaws.com:5432/d9ia1c36hb2574?ssl=true',
   });
 
 app.use(bodyParser());

@@ -4,12 +4,12 @@ exports.seed = function(knex) {
       .then(function () {
         // Inserts seed entries
         return knex('restaurants').insert([
-          {userId: 1, title: 'Breakfast',description: 'We serve breakfast all day', 
-          calories: '100kl'},
-          {userId: 1, title: 'Dinner',description: 'We serve vegan also ', 
-          calories: '200kl'},
-          {userId: 2, title: 'Desserts',description: 'Death by Chocolate', 
-          calories: '300kl'},
+          {user_id: 1, title: 'Breakfast',description: 'We serve breakfast all day', 
+          calories: '100kl', price: 545.65, type: 'Type'},
+          {user_id: 1, title: 'Dinner',description: 'We serve vegan also', 
+          calories: '200kl', price: 545.65, type: 'Type'},
+          {user_id: 2, title: 'Desserts',description: 'Death by Chocolate', 
+          calories: '300kl', price: 545.65, type: 'Type'},
          
         ]);
       });

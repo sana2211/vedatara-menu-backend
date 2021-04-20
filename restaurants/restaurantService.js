@@ -1,22 +1,19 @@
-  const restaurantService = {
-   
-    insertNewmenu(knex, newUser){
+  const RestaurantService = {
+    insertNewmenu(knex, newRestaurant){
         return knex
-            .insert(newUser)
+            .insert(newRestaurant)
             .into('restaurants')
             .returning('*')
             .then(rows=>{
                 return rows[0]
             })
     },
-    
     getrestaurants(knex, id){
         return knex 
             .select('*')  
             .from('restaurants')
             .where('user_id', id)
     },
-
     deleterestaurant(knex, id){
         return knex 
             .delete('*')  
@@ -25,5 +22,5 @@
     }
 }
 
-module.exports = restaurantService;
+module.exports = RestaurantService;
 
