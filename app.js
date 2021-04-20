@@ -4,6 +4,7 @@ const express  = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const userRouter = require('./users/userRoutes');
+const addressRouter = require('./users/addressRoutes');
 const restaurantRouter = require('./restaurants/restaurantRoutes');
 const cors = require('cors')
 const knex = require('knex')
@@ -17,6 +18,7 @@ app.use(cors());
 app.set('db', db);
 app.use('/api/users', userRouter);
 app.use('/api/restaurants', restaurantRouter);
+app.use('/api/address', addressRouter);
 /*app.get('/', (req, res)=>{
     res.status(200).send("Hello, World!")
 })*/
