@@ -14,6 +14,11 @@
             .from('restaurants')
             .where('user_id', id)
     },
+    getAllrestaurants(knex, id){
+        return knex 
+            .select('*')  
+            .from('restaurants')
+    },
     deleterestaurant(knex, id){
         return knex 
             .delete('*')  

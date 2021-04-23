@@ -70,5 +70,19 @@ restaurantRouter
     })
 
 
+    restaurantRouter
+    .route(`/`)
+    .get((req, res, next)=>{
+        RestaurantService.getAllrestaurants(
+            req.app.get('db')
+           )
+          .then(user=>{
+            res
+              .status(200)
+              .json(user)
+           })
+           .catch(next);
+    })
+    
 
 module.exports = restaurantRouter 
