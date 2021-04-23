@@ -17,11 +17,13 @@ usersRouter
     })
     .post((req, res, next)=>{
       console.log(req.body)
-       const { fullname, email, password } = req.body
+       const { fullname, email, password, jobTitle, address } = req.body
             const newUser ={
                 fullname,
                 email,
-                password
+                password,
+                jobTitle,
+                address
             };
             console.log(newUser)
             UsersService.insertNewUser(
